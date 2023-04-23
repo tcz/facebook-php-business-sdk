@@ -1,3 +1,9 @@
+# Downgrade to PHP 7.4
+
+```
+vendor/bin/rector
+``` 
+
 # Facebook Business SDK for PHP
 
 [![Packagist](https://img.shields.io/packagist/v/facebook/php-business-sdk)](https://packagist.org/packages/facebook/php-business-sdk)

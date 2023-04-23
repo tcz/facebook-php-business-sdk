@@ -73,9 +73,7 @@ abstract class AbstractCrudObjectTestCase extends AbstractIntegrationTestCase {
    */
   protected function getEmptyClone(AbstractCrudObject $object) {
     $fqn = get_class($object);
-    return new $fqn(
-      $object->{AbstractCrudObject::FIELD_ID},
-      $object->getParentId());
+    return new $fqn($object->{AbstractCrudObject::FIELD_ID}, $object->getParentId());
   }
 
   /**

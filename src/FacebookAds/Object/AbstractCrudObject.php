@@ -419,8 +419,7 @@ class AbstractCrudObject extends AbstractObject {
     if (!$response->getContent()) {
       return null;
     }
-    $object = new $prototype_class(
-      null, null, $this->getApi());
+    $object = new $prototype_class(null, null, $this->getApi());
     /** @var AbstractCrudObject $object */
     $object->setDataWithoutValidation($response->getContent());
     return $object;

@@ -38,11 +38,26 @@ use Psr\Http\Message\ResponseInterface;
  * @category Class
  */
 class CAPIGatewayEndpoint implements CustomEndpointRequest {
-    private Client $client;
-    private string $access_key;
-    private string $endpoint_URL;
-    private bool $sendToEndpointOnly;
-    private ?Filter $filter = null;
+    /**
+     * @var \GuzzleHttp\Client
+     */
+    private $client;
+    /**
+     * @var string
+     */
+    private $access_key;
+    /**
+     * @var string
+     */
+    private $endpoint_URL;
+    /**
+     * @var bool
+     */
+    private $sendToEndpointOnly;
+    /**
+     * @var \FacebookAds\Object\ServerSide\Filter|null
+     */
+    private $filter;
 
     /**
      * Constructor

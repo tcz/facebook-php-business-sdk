@@ -80,10 +80,7 @@ class EventRequest {
     $fields = array();
     $params = $this->toJson();
     $page = new Page($this->container['page_id']);
-    $response = $page->createBusinessDatum(
-      $fields,
-      $params,
-    );
+    $response = $page->createBusinessDatum($fields, $params);
     $event_response = new EventResponse($response->exportAllData());
     return $event_response;
   }
