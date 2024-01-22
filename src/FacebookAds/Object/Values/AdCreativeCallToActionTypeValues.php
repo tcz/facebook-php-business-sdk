@@ -1,25 +1,10 @@
 <?php
-/**
- * Copyright (c) 2015-present, Facebook, Inc. All rights reserved.
+ /*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * All rights reserved.
  *
- * You are hereby granted a non-exclusive, worldwide, royalty-free license to
- * use, copy, modify, and distribute this software in source code or binary
- * form for use in connection with the web services and APIs provided by
- * Facebook.
- *
- * As with any software that integrates with the Facebook platform, your use
- * of this software is subject to the Facebook Developer Principles and
- * Policies [http://developers.facebook.com/policy/]. This copyright notice
- * shall be included in all copies or substantial portions of the software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
- * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- * DEALINGS IN THE SOFTWARE.
- *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 namespace FacebookAds\Object\Values;
@@ -40,6 +25,7 @@ class AdCreativeCallToActionTypeValues extends AbstractEnum {
   const ADD_TO_CART = 'ADD_TO_CART';
   const APPLY_NOW = 'APPLY_NOW';
   const AUDIO_CALL = 'AUDIO_CALL';
+  const BOOK_NOW = 'BOOK_NOW';
   const BOOK_TRAVEL = 'BOOK_TRAVEL';
   const BUY = 'BUY';
   const BUY_NOW = 'BUY_NOW';
@@ -47,6 +33,7 @@ class AdCreativeCallToActionTypeValues extends AbstractEnum {
   const CALL = 'CALL';
   const CALL_ME = 'CALL_ME';
   const CALL_NOW = 'CALL_NOW';
+  const CONFIRM = 'CONFIRM';
   const CONTACT = 'CONTACT';
   const CONTACT_US = 'CONTACT_US';
   const DONATE = 'DONATE';
@@ -61,9 +48,11 @@ class AdCreativeCallToActionTypeValues extends AbstractEnum {
   const GET_DIRECTIONS = 'GET_DIRECTIONS';
   const GET_OFFER = 'GET_OFFER';
   const GET_OFFER_VIEW = 'GET_OFFER_VIEW';
+  const GET_PROMOTIONS = 'GET_PROMOTIONS';
   const GET_QUOTE = 'GET_QUOTE';
   const GET_SHOWTIMES = 'GET_SHOWTIMES';
   const GET_STARTED = 'GET_STARTED';
+  const INQUIRE_NOW = 'INQUIRE_NOW';
   const INSTALL_APP = 'INSTALL_APP';
   const INSTALL_MOBILE_APP = 'INSTALL_MOBILE_APP';
   const LEARN_MORE = 'LEARN_MORE';
@@ -72,7 +61,6 @@ class AdCreativeCallToActionTypeValues extends AbstractEnum {
   const LISTEN_NOW = 'LISTEN_NOW';
   const MESSAGE_PAGE = 'MESSAGE_PAGE';
   const MOBILE_DOWNLOAD = 'MOBILE_DOWNLOAD';
-  const MOMENTS = 'MOMENTS';
   const NO_BUTTON = 'NO_BUTTON';
   const OPEN_INSTANT_APP = 'OPEN_INSTANT_APP';
   const OPEN_LINK = 'OPEN_LINK';

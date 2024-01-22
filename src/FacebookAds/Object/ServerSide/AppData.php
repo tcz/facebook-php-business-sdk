@@ -286,9 +286,7 @@ class AppData implements ArrayAccess {
    */
   public function normalize() {
     $normalized_payload = array();
-
-    $normalized_payload['application_tracking_enabled'] = $this->getApplicationTrackingEnabled();
-    $normalized_payload['advertiser_tracking_enabled'] = $this->getAdvertiserTrackingEnabled();
+    
     $normalized_payload['app_user_id']= $this->getAppUserId();
     $normalized_payload['campaign_ids'] = $this->getCampaignIds();
     $normalized_payload['consider_views'] = $this->getConsiderViews();
@@ -302,6 +300,11 @@ class AppData implements ArrayAccess {
     $normalized_payload['windows_attribution_id'] = $this->getWindowsAttributionId();
 
     $normalized_payload = array_filter($normalized_payload);
+
+    // The following two booleans are set after array_filter because they are required and 
+    // shouldn't be removed when falsy
+    $normalized_payload['application_tracking_enabled'] = $this->getApplicationTrackingEnabled();
+    $normalized_payload['advertiser_tracking_enabled'] = $this->getAdvertiserTrackingEnabled();
 
     return $normalized_payload;
   }

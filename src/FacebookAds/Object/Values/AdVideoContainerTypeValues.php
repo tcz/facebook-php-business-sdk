@@ -1,25 +1,10 @@
 <?php
-/**
- * Copyright (c) 2015-present, Facebook, Inc. All rights reserved.
+ /*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * All rights reserved.
  *
- * You are hereby granted a non-exclusive, worldwide, royalty-free license to
- * use, copy, modify, and distribute this software in source code or binary
- * form for use in connection with the web services and APIs provided by
- * Facebook.
- *
- * As with any software that integrates with the Facebook platform, your use
- * of this software is subject to the Facebook Developer Principles and
- * Policies [http://developers.facebook.com/policy/]. This copyright notice
- * shall be included in all copies or substantial portions of the software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
- * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
- * DEALINGS IN THE SOFTWARE.
- *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 namespace FacebookAds\Object\Values;
@@ -56,7 +41,6 @@ class AdVideoContainerTypeValues extends AbstractEnum {
   const AUDIO_COMMENT = 'AUDIO_COMMENT';
   const BROADCAST = 'BROADCAST';
   const BULLETIN_ARTICLE_AUDIO = 'BULLETIN_ARTICLE_AUDIO';
-  const CANDIDATE_VIDEOS_DELETED = 'CANDIDATE_VIDEOS_DELETED';
   const CANVAS = 'CANVAS';
   const CFC_VIDEO = 'CFC_VIDEO';
   const CMS_MEDIA_MANAGER = 'CMS_MEDIA_MANAGER';
@@ -80,6 +64,7 @@ class AdVideoContainerTypeValues extends AbstractEnum {
   const EVENT_COVER_VIDEO = 'EVENT_COVER_VIDEO';
   const EVENT_TOUR = 'EVENT_TOUR';
   const FACECAST_DVR = 'FACECAST_DVR';
+  const FB_AVATAR_ANIMATED_SATP = 'FB_AVATAR_ANIMATED_SATP';
   const FB_COLLECTIBLE_VIDEO = 'FB_COLLECTIBLE_VIDEO';
   const FB_SHORTS = 'FB_SHORTS';
   const FB_SHORTS_CONTENT_REMIXABLE = 'FB_SHORTS_CONTENT_REMIXABLE';
@@ -102,7 +87,6 @@ class AdVideoContainerTypeValues extends AbstractEnum {
   const GROUP_POST = 'GROUP_POST';
   const HACK_TV = 'HACK_TV';
   const HEURISTIC_CLUSTER_VIDEO = 'HEURISTIC_CLUSTER_VIDEO';
-  const HEURISTIC_PREVIEW = 'HEURISTIC_PREVIEW';
   const HIGHLIGHT_CLIP_VIDEO = 'HIGHLIGHT_CLIP_VIDEO';
   const HUDDLE_BROADCAST = 'HUDDLE_BROADCAST';
   const IG_REELS_XPV = 'IG_REELS_XPV';
@@ -112,13 +96,13 @@ class AdVideoContainerTypeValues extends AbstractEnum {
   const INSTAGRAM_VIDEO_COPY = 'INSTAGRAM_VIDEO_COPY';
   const INSTANT_APPLICATION_PREVIEW = 'INSTANT_APPLICATION_PREVIEW';
   const INSTANT_ARTICLE = 'INSTANT_ARTICLE';
+  const INSTANT_GAMES_PROMO = 'INSTANT_GAMES_PROMO';
   const INSTANT_GAME_CLIP = 'INSTANT_GAME_CLIP';
   const ISSUE_MODULE = 'ISSUE_MODULE';
   const JOBS_CAREERS = 'JOBS_CAREERS';
   const JOBS_VISUAL_INTRO_ENTRY = 'JOBS_VISUAL_INTRO_ENTRY';
   const JOB_APPLICATION_VIDEO = 'JOB_APPLICATION_VIDEO';
   const JOB_OPENING_VIDEO = 'JOB_OPENING_VIDEO';
-  const KOTOTORO = 'KOTOTORO';
   const LEARN = 'LEARN';
   const LEGACY = 'LEGACY';
   const LEGACY_CONTAINED_POST_BROADCAST = 'LEGACY_CONTAINED_POST_BROADCAST';
@@ -174,6 +158,7 @@ class AdVideoContainerTypeValues extends AbstractEnum {
   const PROFILE_INTRO_CARD = 'PROFILE_INTRO_CARD';
   const PROFILE_VIDEO = 'PROFILE_VIDEO';
   const PROTON = 'PROTON';
+  const QUICK_CLIP_WORKPLACE_POST = 'QUICK_CLIP_WORKPLACE_POST';
   const QUICK_PROMOTION = 'QUICK_PROMOTION';
   const REPLACE_VIDEO = 'REPLACE_VIDEO';
   const SALES_CLIENT_INTERACTION = 'SALES_CLIENT_INTERACTION';
@@ -182,7 +167,6 @@ class AdVideoContainerTypeValues extends AbstractEnum {
   const SLIDESHOW_ANIMOTO = 'SLIDESHOW_ANIMOTO';
   const SLIDESHOW_SHAKR = 'SLIDESHOW_SHAKR';
   const SLIDESHOW_VARIATION_VIDEO = 'SLIDESHOW_VARIATION_VIDEO';
-  const SOTTO_CONTENT = 'SOTTO_CONTENT';
   const SOUNDBITES_VIDEO = 'SOUNDBITES_VIDEO';
   const SOUND_PLATFORM_STREAM = 'SOUND_PLATFORM_STREAM';
   const SRT_ATTACHMENT = 'SRT_ATTACHMENT';
