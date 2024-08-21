@@ -448,9 +448,9 @@ class AdVideo extends AbstractCrudObject {
       $this->data['id'],
       RequestInterface::METHOD_GET,
       '/tags',
-      new AbstractCrudObject(),
+      new TaggableSubject(),
       'EDGE',
-      array(),
+      TaggableSubject::getFieldsEnum()->getValues(),
       new TypeChecker($param_types, $enums)
     );
     $request->addParams($params);
