@@ -1,5 +1,7 @@
 # Downgrade to PHP 7.4
 
+First merge the official repo on Github web, then pull and:
+
 ```
 vendor/bin/rector
 ``` 
