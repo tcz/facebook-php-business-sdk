@@ -68,13 +68,36 @@ class AdVideo extends AbstractCrudObject {
     $ref_enums['SwapMode'] = AdVideoSwapModeValues::getInstance()->getValues();
     $ref_enums['UnpublishedContentType'] = AdVideoUnpublishedContentTypeValues::getInstance()->getValues();
     $ref_enums['UploadPhase'] = AdVideoUploadPhaseValues::getInstance()->getValues();
+    $ref_enums['VideoState'] = AdVideoVideoStateValues::getInstance()->getValues();
     $ref_enums['ValidationAdPlacements'] = AdVideoValidationAdPlacementsValues::getInstance()->getValues();
     $ref_enums['Type'] = AdVideoTypeValues::getInstance()->getValues();
-    $ref_enums['VideoState'] = AdVideoVideoStateValues::getInstance()->getValues();
     $ref_enums['BackdatedTimeGranularity'] = AdVideoBackdatedTimeGranularityValues::getInstance()->getValues();
     return $ref_enums;
   }
 
+
+  public function getBoostAdsList(array $fields = array(), array $params = array(), $pending = false) {
+    $this->assureId();
+
+    $param_types = array(
+    );
+    $enums = array(
+    );
+
+    $request = new ApiRequest(
+      $this->api,
+      $this->data['id'],
+      RequestInterface::METHOD_GET,
+      '/boost_ads_list',
+      new AbstractCrudObject(),
+      'EDGE',
+      array(),
+      new TypeChecker($param_types, $enums)
+    );
+    $request->addParams($params);
+    $request->addFields($fields);
+    return $pending ? $request : $request->execute();
+  }
 
   public function getCaptions(array $fields = array(), array $params = array(), $pending = false) {
     $this->assureId();
@@ -99,7 +122,7 @@ class AdVideo extends AbstractCrudObject {
     return $pending ? $request : $request->execute();
   }
 
-  public function createCaption(array $fields = array(), array $params = array(), $pending = false) {
+  public function createCapTIOn(array $fields = array(), array $params = array(), $pending = false) {
     $this->assureId();
 
     $param_types = array(
@@ -592,7 +615,7 @@ class AdVideo extends AbstractCrudObject {
       'call_to_action' => 'Object',
       'content_category' => 'content_category_enum',
       'content_tags' => 'list<string>',
-      'custom_labels' => 'string',
+      'custom_labels' => 'list<string>',
       'description' => 'string',
       'direct_share_status' => 'unsigned int',
       'embeddable' => 'bool',

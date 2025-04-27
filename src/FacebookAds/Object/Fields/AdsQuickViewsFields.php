@@ -28,7 +28,9 @@ class AdsQuickViewsFields extends AbstractEnum {
   const DESCRIPTION = 'description';
   const ID = 'id';
   const NAME = 'name';
+  const OWNER = 'owner';
   const PERMISSION = 'permission';
+  const QUICK_VIEW_TYPE = 'quick_view_type';
   const SORT = 'sort';
 
   public function getFieldTypes() {
@@ -39,7 +41,9 @@ class AdsQuickViewsFields extends AbstractEnum {
       'description' => 'string',
       'id' => 'string',
       'name' => 'string',
+      'owner' => 'Profile',
       'permission' => 'string',
+      'quick_view_type' => 'string',
       'sort' => 'list<Object>',
     );
   }

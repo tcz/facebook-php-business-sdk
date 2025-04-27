@@ -54,7 +54,8 @@ class AdSetFields extends AbstractEnum {
   const FREQUENCY_CONTROL_SPECS = 'frequency_control_specs';
   const FULL_FUNNEL_EXPLORATION_MODE = 'full_funnel_exploration_mode';
   const ID = 'id';
-  const INSTAGRAM_ACTOR_ID = 'instagram_actor_id';
+  const INSTAGRAM_USER_ID = 'instagram_user_id';
+  const IS_BA_SKIP_DELAYED_ELIGIBLE = 'is_ba_skip_delayed_eligible';
   const IS_BUDGET_SCHEDULE_ENABLED = 'is_budget_schedule_enabled';
   const IS_DYNAMIC_CREATIVE = 'is_dynamic_creative';
   const ISSUES_INFO = 'issues_info';
@@ -91,6 +92,7 @@ class AdSetFields extends AbstractEnum {
   const DAILY_IMPS = 'daily_imps';
   const DATE_FORMAT = 'date_format';
   const EXECUTION_OPTIONS = 'execution_options';
+  const IS_SAC_CFCA_TERMS_CERTIFIED = 'is_sac_cfca_terms_certified';
   const LINE_NUMBER = 'line_number';
   const RB_PREDICTION_ID = 'rb_prediction_id';
   const TIME_START = 'time_start';
@@ -132,7 +134,8 @@ class AdSetFields extends AbstractEnum {
       'frequency_control_specs' => 'list<AdCampaignFrequencyControlSpecs>',
       'full_funnel_exploration_mode' => 'string',
       'id' => 'string',
-      'instagram_actor_id' => 'string',
+      'instagram_user_id' => 'string',
+      'is_ba_skip_delayed_eligible' => 'bool',
       'is_budget_schedule_enabled' => 'bool',
       'is_dynamic_creative' => 'bool',
       'issues_info' => 'list<AdCampaignIssuesInfo>',
@@ -169,6 +172,7 @@ class AdSetFields extends AbstractEnum {
       'daily_imps' => 'unsigned int',
       'date_format' => 'string',
       'execution_options' => 'list<ExecutionOptions>',
+      'is_sac_cfca_terms_certified' => 'bool',
       'line_number' => 'unsigned int',
       'rb_prediction_id' => 'string',
       'time_start' => 'datetime',

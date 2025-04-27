@@ -132,7 +132,7 @@ class Event implements ArrayAccess {
    * Constructor
    * @param mixed[] $data Associated array of property value initializing the model
    */
-  public function __construct(array $data = null) {
+  public function __construct(?array $data = null) {
     $this->container['event_name'] = isset($data['event_name']) ? $data['event_name'] : null;
     $this->container['event_time'] = isset($data['event_time']) ? $data['event_time'] : null;
     $this->container['event_source_url'] = isset($data['event_source_url']) ? $data['event_source_url'] : null;
@@ -575,8 +575,8 @@ class Event implements ArrayAccess {
    * Sets the attribution data of the event.
    * @return $this
    */
-  public function setAttributionData($attribute_data) {
-    $this->container['attribute_data'] = $attribute_data;
+  public function setAttributionData($attribution_data) {
+    $this->container['attribution_data'] = $attribution_data;
     return $this;
   }
 

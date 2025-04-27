@@ -29,8 +29,11 @@ class AdsUserSettingsFields extends AbstractEnum {
   const ADS_TOOL_VISITS = 'ads_tool_visits';
   const APLUSC_CAROUSEL_CDA_OPT_IN_STATUS = 'aplusc_carousel_cda_opt_in_status';
   const APLUSC_CAROUSEL_INLINE_COMMENT_OPT_IN_STATUS = 'aplusc_carousel_inline_comment_opt_in_status';
+  const APLUSC_ENHANCE_CTA_OPT_IN_STATUS = 'aplusc_enhance_cta_opt_in_status';
   const APLUSC_EPA_OPT_IN_STATUS = 'aplusc_epa_opt_in_status';
+  const APLUSC_LOCAL_STORE_EXTENSION_OPT_IN_STATUS = 'aplusc_local_store_extension_opt_in_status';
   const APLUSC_OPT_OUT_FRICTION = 'aplusc_opt_out_friction';
+  const APLUSC_VIDEOFILTER_OPT_IN_STATUS = 'aplusc_videofilter_opt_in_status';
   const AUTOFLOW_LITE_OPT_IN_STATUS = 'autoflow_lite_opt_in_status';
   const AUTOFLOW_LITE_SHOULD_OPT_IN = 'autoflow_lite_should_opt_in';
   const BLENDED_ADS_CREATION_DEFAULTING_OPT_IN_STATUS = 'blended_ads_creation_defaulting_opt_in_status';
@@ -41,6 +44,7 @@ class AdsUserSettingsFields extends AbstractEnum {
   const CAROUSEL_TO_VIDEO_OPT_IN_STATUS = 'carousel_to_video_opt_in_status';
   const CONNECTED_SOURCES_CATALOG_OPT_IN_STATUS = 'connected_sources_catalog_opt_in_status';
   const DEFAULT_CREATION_MODE = 'default_creation_mode';
+  const DYNAMIC_PARTNERSHIP_ADS_OPT_IN_STATUS = 'dynamic_partnership_ads_opt_in_status';
   const ENHANCE_CTA_TEXT_EXTRACTION_OPT_IN_STATUS = 'enhance_cta_text_extraction_opt_in_status';
   const EXPORT_FORMAT_DEFAULT = 'export_format_default';
   const FOCUS_MODE_DEFAULT = 'focus_mode_default';
@@ -59,6 +63,8 @@ class AdsUserSettingsFields extends AbstractEnum {
   const OPEN_TABS = 'open_tabs';
   const PREVIOUSLY_SEEN_RECOMMENDATIONS = 'previously_seen_recommendations';
   const PRODUCT_EXTENSIONS_OPT_IN = 'product_extensions_opt_in';
+  const SA_OFF_CONV_LOC_SEEN = 'sa_off_conv_loc_seen';
+  const SAON_MIGR_L1_SEEN_STATUS = 'saon_migr_l1_seen_status';
   const SELECTED_AD_ACCOUNT = 'selected_ad_account';
   const SELECTED_COMPARISON_TIMERANGE = 'selected_comparison_timerange';
   const SELECTED_METRIC_CIC = 'selected_metric_cic';
@@ -94,8 +100,11 @@ class AdsUserSettingsFields extends AbstractEnum {
       'ads_tool_visits' => 'list<Object>',
       'aplusc_carousel_cda_opt_in_status' => 'string',
       'aplusc_carousel_inline_comment_opt_in_status' => 'string',
+      'aplusc_enhance_cta_opt_in_status' => 'string',
       'aplusc_epa_opt_in_status' => 'string',
+      'aplusc_local_store_extension_opt_in_status' => 'string',
       'aplusc_opt_out_friction' => 'list<string>',
+      'aplusc_videofilter_opt_in_status' => 'string',
       'autoflow_lite_opt_in_status' => 'string',
       'autoflow_lite_should_opt_in' => 'bool',
       'blended_ads_creation_defaulting_opt_in_status' => 'string',
@@ -106,6 +115,7 @@ class AdsUserSettingsFields extends AbstractEnum {
       'carousel_to_video_opt_in_status' => 'string',
       'connected_sources_catalog_opt_in_status' => 'string',
       'default_creation_mode' => 'string',
+      'dynamic_partnership_ads_opt_in_status' => 'string',
       'enhance_cta_text_extraction_opt_in_status' => 'string',
       'export_format_default' => 'string',
       'focus_mode_default' => 'string',
@@ -124,6 +134,8 @@ class AdsUserSettingsFields extends AbstractEnum {
       'open_tabs' => 'list<string>',
       'previously_seen_recommendations' => 'list<string>',
       'product_extensions_opt_in' => 'string',
+      'sa_off_conv_loc_seen' => 'string',
+      'saon_migr_l1_seen_status' => 'string',
       'selected_ad_account' => 'AdAccount',
       'selected_comparison_timerange' => 'Object',
       'selected_metric_cic' => 'string',

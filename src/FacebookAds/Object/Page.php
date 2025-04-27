@@ -42,14 +42,14 @@ use FacebookAds\Object\Values\LiveVideoStereoscopicModeValues;
 use FacebookAds\Object\Values\LiveVideoStreamTypeValues;
 use FacebookAds\Object\Values\MediaFingerprintFingerprintContentTypeValues;
 use FacebookAds\Object\Values\MessengerBusinessTemplateStatusValues;
-use FacebookAds\Object\Values\PageActionTypeValues;
-use FacebookAds\Object\Values\PageActionValues;
+use FacebookAds\Object\Values\PageActionsValues;
 use FacebookAds\Object\Values\PageAttireValues;
 use FacebookAds\Object\Values\PageBackdatedTimeGranularityValues;
 use FacebookAds\Object\Values\PageCategoryValues;
 use FacebookAds\Object\Values\PageDeveloperActionValues;
 use FacebookAds\Object\Values\PageFoodStylesValues;
 use FacebookAds\Object\Values\PageFormattingValues;
+use FacebookAds\Object\Values\PageGenAiProvenanceTypeValues;
 use FacebookAds\Object\Values\PageMessagingTypeValues;
 use FacebookAds\Object\Values\PageModelValues;
 use FacebookAds\Object\Values\PageNotificationTypeValues;
@@ -110,6 +110,7 @@ class Page extends AbstractCrudObject {
     $ref_enums = array();
     $ref_enums['Attire'] = PageAttireValues::getInstance()->getValues();
     $ref_enums['FoodStyles'] = PageFoodStylesValues::getInstance()->getValues();
+    $ref_enums['GenAiProvenanceType'] = PageGenAiProvenanceTypeValues::getInstance()->getValues();
     $ref_enums['PickupOptions'] = PagePickupOptionsValues::getInstance()->getValues();
     $ref_enums['TemporaryStatus'] = PageTemporaryStatusValues::getInstance()->getValues();
     $ref_enums['PermittedTasks'] = PagePermittedTasksValues::getInstance()->getValues();
@@ -127,11 +128,10 @@ class Page extends AbstractCrudObject {
     $ref_enums['SenderAction'] = PageSenderActionValues::getInstance()->getValues();
     $ref_enums['SuggestionAction'] = PageSuggestionActionValues::getInstance()->getValues();
     $ref_enums['Platform'] = PagePlatformValues::getInstance()->getValues();
+    $ref_enums['Actions'] = PageActionsValues::getInstance()->getValues();
     $ref_enums['Model'] = PageModelValues::getInstance()->getValues();
     $ref_enums['DeveloperAction'] = PageDeveloperActionValues::getInstance()->getValues();
     $ref_enums['SubscribedFields'] = PageSubscribedFieldsValues::getInstance()->getValues();
-    $ref_enums['Action'] = PageActionValues::getInstance()->getValues();
-    $ref_enums['ActionType'] = PageActionTypeValues::getInstance()->getValues();
     return $ref_enums;
   }
 
@@ -1946,7 +1946,6 @@ class Page extends AbstractCrudObject {
     $param_types = array(
       'category' => 'category_enum',
       'components' => 'list<map>',
-      'example' => 'map',
       'language' => 'string',
       'library_template_button_inputs' => 'list<map>',
       'library_template_name' => 'string',
@@ -2239,6 +2238,32 @@ class Page extends AbstractCrudObject {
     return $pending ? $request : $request->execute();
   }
 
+  public function createModerateConversation(array $fields = array(), array $params = array(), $pending = false) {
+    $this->assureId();
+
+    $param_types = array(
+      'actions' => 'list<actions_enum>',
+      'user_ids' => 'list<map>',
+    );
+    $enums = array(
+      'actions_enum' => PageActionsValues::getInstance()->getValues(),
+    );
+
+    $request = new ApiRequest(
+      $this->api,
+      $this->data['id'],
+      RequestInterface::METHOD_POST,
+      '/moderate_conversations',
+      new Page(),
+      'EDGE',
+      Page::getFieldsEnum()->getValues(),
+      new TypeChecker($param_types, $enums)
+    );
+    $request->addParams($params);
+    $request->addFields($fields);
+    return $pending ? $request : $request->execute();
+  }
+
   public function createNlpConfig(array $fields = array(), array $params = array(), $pending = false) {
     $this->assureId();
 
@@ -2416,32 +2441,6 @@ class Page extends AbstractCrudObject {
     return $pending ? $request : $request->execute();
   }
 
-  public function createPassThreadMetadatum(array $fields = array(), array $params = array(), $pending = false) {
-    $this->assureId();
-
-    $param_types = array(
-      'metadata' => 'string',
-      'recipient' => 'Object',
-      'target_app_id' => 'int',
-    );
-    $enums = array(
-    );
-
-    $request = new ApiRequest(
-      $this->api,
-      $this->data['id'],
-      RequestInterface::METHOD_POST,
-      '/pass_thread_metadata',
-      new Page(),
-      'EDGE',
-      Page::getFieldsEnum()->getValues(),
-      new TypeChecker($param_types, $enums)
-    );
-    $request->addParams($params);
-    $request->addFields($fields);
-    return $pending ? $request : $request->execute();
-  }
-
   public function getPersonas(array $fields = array(), array $params = array(), $pending = false) {
     $this->assureId();
 
@@ -2583,6 +2582,7 @@ class Page extends AbstractCrudObject {
       'place' => 'Object',
       'privacy' => 'string',
       'profile_id' => 'int',
+      'provenance_info' => 'map',
       'proxied_app_id' => 'string',
       'published' => 'bool',
       'qn' => 'string',
@@ -2771,29 +2771,6 @@ class Page extends AbstractCrudObject {
       new PagePost(),
       'EDGE',
       PagePost::getFieldsEnum()->getValues(),
-      new TypeChecker($param_types, $enums)
-    );
-    $request->addParams($params);
-    $request->addFields($fields);
-    return $pending ? $request : $request->execute();
-  }
-
-  public function getRatings(array $fields = array(), array $params = array(), $pending = false) {
-    $this->assureId();
-
-    $param_types = array(
-    );
-    $enums = array(
-    );
-
-    $request = new ApiRequest(
-      $this->api,
-      $this->data['id'],
-      RequestInterface::METHOD_GET,
-      '/ratings',
-      new Recommendation(),
-      'EDGE',
-      Recommendation::getFieldsEnum()->getValues(),
       new TypeChecker($param_types, $enums)
     );
     $request->addParams($params);
@@ -3016,6 +2993,29 @@ class Page extends AbstractCrudObject {
     return $pending ? $request : $request->execute();
   }
 
+  public function getStoreLocations(array $fields = array(), array $params = array(), $pending = false) {
+    $this->assureId();
+
+    $param_types = array(
+    );
+    $enums = array(
+    );
+
+    $request = new ApiRequest(
+      $this->api,
+      $this->data['id'],
+      RequestInterface::METHOD_GET,
+      '/store_locations',
+      new StoreLocation(),
+      'EDGE',
+      StoreLocation::getFieldsEnum()->getValues(),
+      new TypeChecker($param_types, $enums)
+    );
+    $request->addParams($params);
+    $request->addFields($fields);
+    return $pending ? $request : $request->execute();
+  }
+
   public function getStories(array $fields = array(), array $params = array(), $pending = false) {
     $this->assureId();
 
@@ -3176,34 +3176,6 @@ class Page extends AbstractCrudObject {
       $this->data['id'],
       RequestInterface::METHOD_POST,
       '/take_thread_control',
-      new Page(),
-      'EDGE',
-      Page::getFieldsEnum()->getValues(),
-      new TypeChecker($param_types, $enums)
-    );
-    $request->addParams($params);
-    $request->addFields($fields);
-    return $pending ? $request : $request->execute();
-  }
-
-  public function createThreadAction(array $fields = array(), array $params = array(), $pending = false) {
-    $this->assureId();
-
-    $param_types = array(
-      'action' => 'action_enum',
-      'action_type' => 'action_type_enum',
-      'user_id' => 'map',
-    );
-    $enums = array(
-      'action_enum' => PageActionValues::getInstance()->getValues(),
-      'action_type_enum' => PageActionTypeValues::getInstance()->getValues(),
-    );
-
-    $request = new ApiRequest(
-      $this->api,
-      $this->data['id'],
-      RequestInterface::METHOD_POST,
-      '/thread_action',
       new Page(),
       'EDGE',
       Page::getFieldsEnum()->getValues(),
@@ -3801,6 +3773,7 @@ class Page extends AbstractCrudObject {
       'focus_x' => 'float',
       'focus_y' => 'float',
       'food_styles' => 'list<food_styles_enum>',
+      'gen_ai_provenance_type' => 'gen_ai_provenance_type_enum',
       'general_info' => 'string',
       'general_manager' => 'string',
       'genre' => 'string',
@@ -3840,6 +3813,7 @@ class Page extends AbstractCrudObject {
     $enums = array(
       'attire_enum' => PageAttireValues::getInstance()->getValues(),
       'food_styles_enum' => PageFoodStylesValues::getInstance()->getValues(),
+      'gen_ai_provenance_type_enum' => PageGenAiProvenanceTypeValues::getInstance()->getValues(),
       'pickup_options_enum' => PagePickupOptionsValues::getInstance()->getValues(),
       'temporary_status_enum' => PageTemporaryStatusValues::getInstance()->getValues(),
     );

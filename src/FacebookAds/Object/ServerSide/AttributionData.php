@@ -89,7 +89,7 @@ class AttributionData implements ArrayAccess {
 
   protected $container = array();
 
-  public function __construct(array $data = null) {
+  public function __construct(?array $data = null) {
     $this->container['scope'] = isset($data['scope']) ? $data['scope'] : null;
     $this->container['visit_time'] = isset($data['visit_time']) ? $data['visit_time'] : null;
     $this->container['ad_id'] = isset($data['ad_id']) ? $data['ad_id'] : null;
@@ -275,6 +275,47 @@ class AttributionData implements ArrayAccess {
    */
   public function getAttrWindow() {
     return $this->container['attr_window'];
+  }
+
+  /**
+   * Returns true if offset exists. False otherwise.
+   * @param integer $offset Offset
+   * @return boolean
+   */
+  public function offsetExists($offset) : bool {
+    return isset($this->container[$offset]);
+  }
+
+  /**
+   * Gets offset.
+   * @param integer $offset Offset
+   * @return mixed
+   */
+  public function offsetGet($offset) : mixed {
+    return isset($this->container[$offset]) ? $this->container[$offset] : null;
+  }
+
+  /**
+   * Sets value based on offset.
+   * @param integer $offset Offset
+   * @param mixed $value Value to be set
+   * @return void
+   */
+  public function offsetSet($offset, $value) : void {
+    if (is_null($offset)) {
+      $this->container[] = $value;
+    } else {
+      $this->container[$offset] = $value;
+    }
+  }
+
+  /**
+   * Unsets offset.
+   * @param integer $offset Offset
+   * @return void
+   */
+  public function offsetUnset($offset) : void {
+    unset($this->container[$offset]);
   }
 
   public function normalize() {
